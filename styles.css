@@ -47,6 +47,32 @@ tr:nth-child(even) {
   background-color: #E6E6FA;
 }
 
+/* Continuing Education Page */
+
+.badge_row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 20px;
+	flex-wrap: wrap;
+}
+
+.badge {
+	text-align: center;
+	max-width: 150px;
+}
+
+.badge img {
+	width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.badge p {
+    font-family: "Trebuchet MS", sans-serif;
+}
+
 /* All Pages */
 .topnav {
   background-color: #262626;
