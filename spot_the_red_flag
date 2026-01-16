@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spot the Red Flags</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Spot the Red Flags (In Development)</h1>
+<br>
+<p>Click on anything you think looks suspicious in this email...</p>
+<br><br>
+<div id="game_container">
+    <img id="email_image" src="images/phishing_sample.png" alt="Phishing email example">
+
+    <!-- Red flag hotspots -->
+    <div class="hotspot" id="flag1" data-message="Suspicious sender address"></div>
+    <div class="hotspot" id="flag2" data-message="Vague greeting - Dear Customer/User"></div>
+    <div class="hotspot" id="flag3" data-message="Grammar/typos/spelling errors"></div>
+    <div class="hotspot" id="flag4" data-message="Grammar/typos/spelling errors"></div>
+	  <div class="hotspot" id="flag5" data-message="Urgent request - attackers create pressure"></div>
+	  <div class="hotspot" id="flag6" data-message="Fake link - in real emails, hovering over the link shows mismatched URL"></div>
+</div>
+
+<div id="feedback"></div>
+
+<script>
+
+const hotspots = document.querySelectorAll('.hotspot');
+	const feedbackBox = document.getElementById('feedback');
+
+	let flagsFound = 0;
+	const totalFlags = hotspots.length;
+
+	hotspots.forEach(hotspot => {
+		hotspot.addEventListener('click', () => {
+			
+			if (hotspot.classList.contains('found')) return;
+
+			hotspot.classList.add('found');
+
+			const message = hotspot.dataset.message;
+
+			feedbackBox.style.display = "block";
+			feedbackBox.innerHTML = `
+				<strong>Red Flag Found!</strong><br>
+				${message}<br><br>
+				(${flagsFound + 1}/${totalFlags} flags found)
+			`;
+
+			flagsFound++;
+
+			if (flagsFound === totalFlags) {
+				feedbackBox.innerHTML += "<br><strong>Great job! You found all 6 red flags in this email!</strong>";
+			}
+		});
+	});
+
+document.getElementById("flag1").style.cssText =
+    "top: 30px; left: 40px; width: 210px; height: 30px;";
+
+document.getElementById("flag2").style.cssText =
+    "top: 125px; left: 175px; width: 150px; height: 40px;";
+
+document.getElementById("flag3").style.cssText =
+    "top: 170px; left: 340px; width: 60px; height: 18px;";
+
+document.getElementById("flag4").style.cssText =
+    "top: 185px; left: 375px; width: 70px; height: 18px;";
+	
+document.getElementById("flag5").style.cssText =
+    "top: 170px; left: 430px; width: 55px; height: 18px;";
+	
+document.getElementById("flag6").style.cssText =
+    "top: 385px; left: 175px; width: 200px; height: 40px;";
+
+</script>
+
+</body>
+</html>
