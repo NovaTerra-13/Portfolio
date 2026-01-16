@@ -230,6 +230,8 @@ body {
 
 #email_image {
     width: 600px;  /* adjust based on image used for phishing example*/
+    max-width: 100%;
+    height: auto;
     border: 2px solid #333;
     border-radius: 6px;
 }
@@ -261,3 +263,4 @@ body {
 #flag4 {top: 185px; left: 375px; width: 70px; height: 18px;} /* grammar/typos/spelling errors */
 #flag5 {top: 170px; left: 430px; width: 55px; height: 18px;} /* attacker psychology: urgency */
 #flag6 {top: 385px; left: 175px; width: 200px; height: 40px;} /* fake link */
+
