@@ -214,3 +214,50 @@ tr:nth-child(even) {
     gap: 40px;
     margin-top: 20px;
 }
+
+/* Spot the Red Flags Game */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef5f1;
+    padding: 20px;
+}
+
+#game_container {
+    position: relative;
+    display: inline-block;
+}
+
+#email_image {
+    width: 600px;  /* adjust based on image used for phishing example*/
+    border: 2px solid #333;
+    border-radius: 6px;
+}
+
+/* Invisible clickable areas */
+.hotspot {
+    position: absolute;
+    cursor: pointer;
+    width: 80px; 
+    height: 40px; 
+    opacity: 0;   /* Make visible for debugging by setting opacity: 0.3 - set to 0 when done */
+    background-color: red; /* for debug purposes only */
+}
+
+/* Feedback Box */
+#feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #14614d;
+    background-color: #f0fff4;
+    max-width: 600px;
+    display: none;
+    border-radius: 6px;
+}
+
+#flag1 {top: 30px; left: 40px; width: 210px; height: 30px;}  /* suspicious sender */
+#flag2 {top: 125px; left: 175px; width: 150px; height: 40px;} /* vague greeting "Dear Customer/User" */
+#flag3 {top: 170px; left: 340px; width: 60px; height: 18px;} /* grammar/typos/spelling errors */
+#flag4 {top: 185px; left: 375px; width: 70px; height: 18px;} /* grammar/typos/spelling errors */
+#flag5 {top: 170px; left: 430px; width: 55px; height: 18px;} /* attacker psychology: urgency */
+#flag6 {top: 385px; left: 175px; width: 200px; height: 40px;} /* fake link */
